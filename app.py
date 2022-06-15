@@ -12,9 +12,9 @@ def greeting():
 
 @app.route("/signature",methods=['POST', 'OPTIONS'])
 def getSignature():
-    if request.method == "OPTIONS": # CORS preflight
+    if request.method == "OPTIONS": 
         return _build_cors_preflight_response()
-    elif request.method == "POST": # The actual request following the preflight
+    elif request.method == "POST":
             message = request.json
             message = message['message']
             response = get_signature(message)

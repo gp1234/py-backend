@@ -16,4 +16,4 @@ def get_signature(message):
   hash_websafe = base64.urlsafe_b64encode(hmac.new(secret_bin, stamped_message, sha512).digest())
   signature = stamped_message.decode('utf-8') + '.' + hash_websafe.decode('utf-8')
 
-  return signature
+  return signature.rstrip('=')
